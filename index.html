@@ -446,29 +446,29 @@ needed.</p>
                     
                     
                         
-                    <form action="process-form.php" method="post">
+                        <form id="submit-form" action="">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" name="name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"name="email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject"name="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" name="message" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message"name="Message" style="height: 100px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -477,7 +477,7 @@ needed.</p>
                             </div>
                         </div>
                     </form>
-                     
+
 
                 </div>
             </div>
@@ -539,8 +539,25 @@ needed.</p>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-        
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxBcyQ2uxEpAg00yrZaMkUWIPeIhM6ta9lDBqkXNuFUuvYfboqgzUeZweZv3wPGHbAV/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form Submitted Successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

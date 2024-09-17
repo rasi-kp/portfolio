@@ -1,6 +1,6 @@
 # portfolio
 
-https://rasikp.000webhostapp.com/ Hosted Website
+[link](https://rasikp.netlify.app/) live Website
 
 <img width="960" alt="port1" src="https://github.com/rasi-kp/portfolio/assets/107319917/6ebc9561-51c1-4b82-ad3d-6581983bd115">
 
